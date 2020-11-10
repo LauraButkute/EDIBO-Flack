@@ -15,7 +15,7 @@ def index():
 @socketio.on('message')
 def message(data):
     print('received message: ' + data)
-    send(data)
+    send(data, broadcast=True)
 
 @socketio.on('new username')
 def new_username(data):
