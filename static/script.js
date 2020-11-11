@@ -47,24 +47,24 @@ $(function(){
         if(key.keyCode===13 ) {
             $('#sendMsg').click();
         }
-        spcket.send(msg)
+        socket.send(msg)
     });
 
     // SEND MESSAGES ON CLICK
 
     $('#sendMsg').on('click', function(){
-        var msg = $('#message').val()
-        socket.send(msg)
+        console.log("Message sent")
+        var msg = $("#message").val();
+        var user = localStorage.username
+        socket.send({"msg": msg, "username" : user})
     });
     
-    
-
     //Receiving data and displaying messages 
     socket.on('message', data =>{
         console.log(data)
         // Display Username
         const span = document.createElement('span')
-        span.innerHTML = localStorage.username;
+        span.innerHTML = data.username;
         $('.message-display-area').append(span);
         const sentOn = document.createElement('span')
         // Display date and time
@@ -74,8 +74,8 @@ $(function(){
         sentOn.innerHTML = time +" "+ date;
         $('.message-display-area').append(sentOn);
         // Display message
-        const message = document.createElement('p')
-        message.innerHTML = data;
-        $('.message-display-area').append(message)
+        const msg = document.createElement('p')
+        msg.innerHTML = data.msg;
+        $('.message-display-area').append(msg)
     });
 })
