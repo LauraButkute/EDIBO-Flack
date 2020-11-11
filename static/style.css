@@ -1,3 +1,49 @@
-h1{
-    color: blue;
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 30px;
+    background: url("/static/assets/back.jpg") no-repeat center center fixed; 
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+}
+
+h1 {
+    color: rgb(119, 116, 116);
+    font-weight: 200;
+}
+
+#sendMsg, #message{
+    border: solid 2px rgba(229, 194, 194, 0.5);
+    border-radius: 5px;
+    color: grey;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#sendMsg:hover {
+    transform: scale(1.04);
+    font-weight: 300;  
+}
+
+.message-display-area {
+    height: 450px;
+    width: 55%;
+    overflow-y: scroll;
+    border: solid 6px rgba(229, 194, 194, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.nickname {
+    font-weight: 500;
+}
+
+.date {
+    font-size: 10px;
+    font-style: italic;
+}
+
+.message-text {
+    color: rgb(149, 90, 167);
 }

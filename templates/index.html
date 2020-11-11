@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECT</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css"> 
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>Let's talk</h1>
 
+    <!-- ENTER MESSAGE AND SEND -->
     <div class="messages">
-        <input id="message" placeholder="enter your message"></div>
-        <button id="sendMsg">SEND</button>
+        <input id="message" placeholder="how are you today, really?">
+        <button id="sendMsg">send</button>
     </div>
 
+    <!-- DISPLAY MESSAGES HERE -->
     <div class="message-display-area">
-
-
     </div>
+
     <!-- MODAL -->
     <div class="modal fade" id="myModal">
         <div class="modal-dialog">
@@ -37,7 +39,6 @@
       </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
     <script src="/static/script.js"></script>

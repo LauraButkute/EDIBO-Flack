@@ -12,10 +12,12 @@ socketio = SocketIO(app)
 def index():
     return render_template('index.html')
 
-@socketio.on('message')
+@socketio.on("message")
 def message(data):
-    print('received message: ' + data)
-    send(data)
+    print("\n{data} \n")
+    print(data["username"])
+    print(data["msg"])
+    send(data,broadcast=True)
 
 @socketio.on('new username')
 def new_username(data):
@@ -27,4 +29,3 @@ def new_username(data):
 @socketio.on('my event')
 def handle_my_custom_event(data):
     emit('my response', data, broadcast=True)
-
