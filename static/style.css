@@ -1,7 +1,7 @@
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: monospace;
     margin: 30px;
-    background: url("/static/assets/back.jpg") no-repeat center center fixed; 
+    background: url("/static/assets/back1.jpg") no-repeat center center fixed; 
     height: 100%;
     overflow: hidden;
     background-size: cover;
@@ -36,14 +36,30 @@ h1 {
 }
 
 .nickname {
-    font-weight: 500;
+    color: rgb(70, 69, 69);
+    font-size: 14px;
 }
 
 .date {
     font-size: 10px;
     font-style: italic;
+    text-align: right;
 }
 
 .message-text {
-    color: rgb(149, 90, 167);
+    color: rgb(126, 75, 110);
+    font-size: 14px;
+}
+
+@media (max-width: 787px) {
+    .message-display-area {
+        width: 100%;
+    }
+}
+
+@media (max-width: 414px) {
+    .message-display-area {
+        width: 100%;
+        height: auto;
+    }
 }

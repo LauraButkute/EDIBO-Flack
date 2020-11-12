@@ -7,7 +7,6 @@ $(function(){
                 $('.modal-title').text("Please enter your username");
                 $('#modalInput').val("");
             }
-            // console.log('SOCKET connected')
         });
 
     // MANIPULATING MODAL, IF ENTER then click
@@ -48,7 +47,6 @@ $(function(){
     // SEND MESSAGES ON CLICK
 
     $('#sendMsg').on('click', function(){
-        // console.log("Message sent")
         var msg = $("#message").val();
         var user = localStorage.username
         socket.send({"msg": msg, "username" : user})
@@ -56,27 +54,27 @@ $(function(){
     
     //Receiving data and displaying messages 
     socket.on('message', data =>{
-        // console.log(data)
-
+        
         // Display Username
-        const span = document.createElement('span')
-        span.className='nickname';
-        span.innerHTML = data.username;
-        $('.message-display-area').append(span);
+        const nick = document.createElement('strong')
+        nick.className='nickname';
+        nick.innerHTML = data.username;
+        $('.single-message-area').append(nick);
+        $('.single-message-area').append(' : ')
+
+        // Display message
+        const msg = document.createElement('span')
+        msg.className='message-text'
+        msg.innerHTML = data.msg;
+        $('.single-message-area').append(msg);
 
         // Display date and time
-        const sentOn = document.createElement('span')
+        const sentOn = document.createElement('p')
         sentOn.className='date';
         var today = new Date();
         var time = today.getHours() + ":" + today.getMinutes();
         var date = today.getFullYear()+ "/" + (today.getMonth()+1) + "/" + today.getDate();
         sentOn.innerHTML = time +"  "+ date;
-        $('.message-display-area').append(sentOn);
-
-        // Display message
-        const msg = document.createElement('p')
-        msg.className='message-text'
-        msg.innerHTML = data.msg;
-        $('.message-display-area').append(msg)
+        $('.single-message-area').append(sentOn);
     });
 })
